@@ -12,6 +12,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- Toastr Notification -->
+    <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -105,5 +108,18 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/toastr.min.js') }}"></script>
+
+@if(Session::has('success'))
+    <script>
+        toastr.success('{{ Session::get('success') }}');
+    </script>
+@endif
+
+@if(Session::has('info'))
+    <script>
+        toastr.info('{{ Session::get('info') }}');
+    </script>
+@endif
 </body>
 </html>
