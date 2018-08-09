@@ -23,6 +23,11 @@ class Post extends Model
         'deleted_at'
     ];
 
+    public function getFeaturedAttribute ($featured) {
+        return asset($featured);
+
+    }
+
 
 
     public function category () {
