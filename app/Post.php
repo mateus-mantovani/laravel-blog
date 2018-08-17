@@ -18,6 +18,11 @@ class Post extends Model
         'slug'
     ];
 
+    public function tags ()
+    {
+        return $this->belongsToMany('App\Tag');
+    }
+
 
     protected $dates = [
         'deleted_at'
