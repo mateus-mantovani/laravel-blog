@@ -6,6 +6,7 @@ use Session;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Post;
+use App\Tag;
 
 class PostsController extends Controller
 {
@@ -28,12 +29,14 @@ class PostsController extends Controller
     {
         $categories = Category::all();
 
+        $tags = Tag::all();
+
         if ($categories->count() == 0) {
             Session::flash('info', 'You must have to create a category before attempting create a post!');
 
             return redirect()->back();
         }
-        return view('admin.posts.create')->with('categories', $categories);
+        return view('admin.posts.create')->with('categories', $categories)->with('tags', $tags);
     }
 
     /**
@@ -49,7 +52,8 @@ class PostsController extends Controller
             'title'     => 'required',
             'featured'  => 'required|image',
             'content'   => 'required',
-            'category_id'  => 'required'
+            'category_id'   => 'required',
+	        'tags'          => 'required|array'
         ]);
 
         $featured = $request->featured;
@@ -65,6 +69,8 @@ class PostsController extends Controller
             'category_id'   => $request->category_id,
             'slug'          => str_slug($request->title)
         ]);
+
+        $post->tags()->attach($request->tags);
 
 
         Session::flash('success', 'Post created succesfully');
@@ -96,7 +102,9 @@ class PostsController extends Controller
 
         $categories = Category::all();
 
-        return view('admin.posts.edit')->with('post', $post)->with('categories', $categories);
+        $tags = Tag::all();
+
+        return view('admin.posts.edit')->with('post', $post)->with('categories', $categories)->with('tags', $tags);
     }
 
     /**
@@ -111,7 +119,8 @@ class PostsController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'content' => 'required',
-            'category_id' => 'required'
+            'category_id' => 'required',
+	        'tags' => 'required|array'
         ]);
 
         $post = Post::find($id);
@@ -133,6 +142,10 @@ class PostsController extends Controller
             'category_id' => $request->category_id,
             'slug' => str_slug($request->title)
         ]);
+
+        $post->tags()->sync($request->tags);
+
+        Session::flash('success', 'The post was updated!');
 
         return redirect()->back();
     }

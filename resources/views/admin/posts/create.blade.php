@@ -33,6 +33,15 @@
                     <input type="file" name="featured" class="form-control">
                 </div>
 
+                @foreach ($tags as $tag)
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="tags[]" value="{{ $tag->id }}"> {{ $tag->name }}
+                        </label>
+                    </div>
+                @endforeach
+
+
                 <div class="form-group">
                     <label for="content">Content</label>
                     <textarea name="content" id="content" cols="5" rows="5" class="form-control"></textarea>

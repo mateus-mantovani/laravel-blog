@@ -33,6 +33,20 @@
                     <input type="file" name="featured" class="form-control">
                 </div>
 
+                @foreach ($tags as $tag)
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="tags[]" value="{{ $tag->id }}"
+                            @foreach($post->tags as $p_tags)
+                                @if($p_tags->id == $tag->id)
+                                    checked
+                                @endif
+                            @endforeach
+                            > {{ $tag->name }}
+                        </label>
+                    </div>
+                @endforeach
+
                 <div class="form-group">
                     <label for="content">Content</label>
                     <textarea name="content" id="content" cols="5" rows="5" class="form-control">{{ $post->content }}</textarea>
