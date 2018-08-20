@@ -14,7 +14,8 @@ class UsersTableSeeder extends Seeder
         $user = App\User::create([
             'name'  => 'Mateus Mantovani',
             'email' => 'mateus@codebit.com.br',
-            'password'  => bcrypt('fdsafdsa')
+            'password'  => bcrypt('fdsafdsa'),
+	        'admin'     => 1
         ]);
 
         App\Profile::create([
@@ -22,7 +23,7 @@ class UsersTableSeeder extends Seeder
 	        'about'     => 'This is about the user.',
 	        'facebook'  => 'facebook.com',
 	        'youtube'   => 'youtube.com',
-	        'avatar'    => 'uploads/avatars/avatar2.png'
+	        'avatar'    => 'uploads/avatars/avatar1.png'
         ]);
     }
 }

@@ -92,6 +92,11 @@
                             <li class="list-group-item">
                                 <a href="{{ route('tag.create') }}">Create a new tag</a>
                             </li>
+
+                            <li class="list-group-item">
+                                <a href="{{ route('user.create') }}">Create a new user</a>
+                            </li>
+
                             <li class="list-group-item">
                                 <a href="{{ route('tag.index') }}">List of tags</a>
                             </li>
@@ -103,6 +108,10 @@
                             </li>
                             <li class="list-group-item">
                                 <a href="{{ route('post.trashed') }}">List of Trashed Posts</a>
+                            </li>
+
+                            <li class="list-group-item">
+                                <a href="{{ route('user.index') }}">List of Users</a>
                             </li>
 
                         </ul>
