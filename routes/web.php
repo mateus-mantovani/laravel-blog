@@ -181,4 +181,15 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 		'as'    => 'user.profile.update'
 	]);
 
+
+	Route::get('/settings', [
+		'uses'  => 'SettingsController@index',
+		'as'    => 'setting.index'
+	]);
+
+	Route::post('/settings/update', [
+		'uses'  => 'SettingsController@update',
+		'as'    => 'setting.update'
+	]);
+
 });

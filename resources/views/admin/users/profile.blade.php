@@ -44,7 +44,7 @@
 
                 <div class="form-group">
                     <label for="about">About you</label>
-                    <textarea class="form-control" rows="3" name="about">{{ $user->profile->about }}</textarea>
+                    <textarea class="form-control" rows="3" name="about" id="about">{{ $user->profile->about }}</textarea>
                 </div>
 
                 <div class="form-group">
@@ -55,6 +55,18 @@
             </form>
         </div>
     </div>
+@stop
 
+@section('style')
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+@stop
 
+@section('javascript')
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#about').summernote();
+        });
+    </script>
 @stop

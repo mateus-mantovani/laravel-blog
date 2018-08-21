@@ -15,6 +15,8 @@
 
     <!-- Toastr Notification -->
     <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
+
+    @yield('style')
 </head>
 <body>
     <div id="app">
@@ -101,6 +103,11 @@
                                 <li class="list-group-item">
                                     <a href="{{ route('user.index') }}">List of Users</a>
                                 </li>
+
+
+                                <li class="list-group-item">
+                                    <a href="{{ route('setting.index') }}">Settings</a>
+                                </li>
                             @endif
 
                             <li class="list-group-item">
@@ -138,6 +145,8 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/toastr.min.js') }}"></script>
+
+    @yield('javascript')
 
 @if(Session::has('success'))
     <script>
