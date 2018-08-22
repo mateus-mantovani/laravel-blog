@@ -12,19 +12,23 @@ class TagsTableSeeder extends Seeder
     public function run()
     {
         \App\Tag::create([
-        	'name'  => 'PHP 7'
+        	'name'  => 'PHP 7',
+	        'core_tag' => 1
         ]);
 
 	    \App\Tag::create([
-		    'name'  => 'MySQL'
+		    'name'  => 'MySQL',
+		    'core_tag' => 1
 	    ]);
 
 	    \App\Tag::create([
-		    'name'  => 'SEO'
+		    'name'  => 'SEO',
+		    'core_tag' => 1
 	    ]);
 
 	    \App\Tag::create([
-		    'name'  => 'Tutorial'
+		    'name'  => 'Tutorial',
+		    'core_tag' => 1
 	    ]);
     }
 }

@@ -30,6 +30,9 @@ class HomeController extends Controller
 	        ->with('categories', Category::take(4)->get())
 	        ->with('first_post', Post::orderBy('created_at', 'desc')->first())
 	        ->with('second_post', Post::orderBy('created_at', 'desc')->skip(1)->take(1)->get()->first())
-	        ->with('third_post', Post::orderBy('created_at', 'desc')->skip(2)->take(1)->get()->first());
+	        ->with('third_post', Post::orderBy('created_at', 'desc')->skip(2)->take(1)->get()->first())
+	        ->with('php_category_posts', Category::find(4)->posts()->take(3)->get())
+	        ->with('drupal_category_posts', Category::find(2)->posts()->take(3)->get())
+	        ->with('laravel_category_posts', Category::find(3)->posts()->take(3)->get());
     }
 }

@@ -66,7 +66,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/category/delete/{id}', [
         'uses'  => 'CategoriesController@destroy',
         'as'    => 'category.delete'
-    ]);
+    ])->middleware('category.delete');
 
 
 
@@ -126,11 +126,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 	    'as'    => 'tag.edit'
     ]);
 
-    Route::get('/tag/delete/{id}', [
-    	'uses'  => 'TagsController@delete',
-	    'as'    => 'tag.delete'
-    ]);
-
     Route::post('/tag/update/{id}', [
     	'uses'  => 'TagsController@update',
 	    'as'    => 'tag.update'
@@ -139,7 +134,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/tag/delete/{id}', [
     	'uses'  => 'TagsController@destroy',
 	    'as'    => 'tag.delete'
-    ]);
+    ])->middleware('tag.delete');
 
 
     Route::get('/users', [

@@ -13,18 +13,22 @@ class CategoriesTableSeeder extends Seeder
     {
 	    \App\Category::create([
 		    'name' => 'Wordpress',
+		    'core_category' => 1
 	    ]);
 
 	    \App\Category::create([
 		    'name' => 'Drupal',
+		    'core_category' => 1
 	    ]);
 
 	    \App\Category::create([
 		    'name' => 'Laravel',
+		    'core_category' => 1
 	    ]);
 
 	    \App\Category::create([
 		    'name' => 'PHP',
+		    'core_category' => 1
 	    ]);
     }
 }
