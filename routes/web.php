@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [
+	'uses'  => 'HomeController@index',
+	'as'    => 'home.index'
+]);
 
 Auth::routes();
 
@@ -22,7 +23,7 @@ Auth::routes();
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
     Route::get('/home', [
-        'uses'  => 'HomeController@index',
+        'uses'  => 'AdminHomeController@index',
         'as'    => 'home'
     ]);
 
