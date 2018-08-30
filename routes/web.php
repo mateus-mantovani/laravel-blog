@@ -21,6 +21,16 @@ Route::get('/post/{slug}', [
 	'as'    => 'home.single'
 ]);
 
+Route::get('/category/{id}', [
+	'uses'  => 'HomeController@singleCategory',
+	'as'    => 'home.single_category'
+]);
+
+Route::get('/tag/{id}', [
+	'uses'  => 'HomeController@singleTag',
+	'as'    => 'home.single_tag'
+]);
+
 Auth::routes();
 
 

@@ -52,7 +52,7 @@
 
                                     <span class="category">
                                         <i class="seoicon-tags"></i>
-                                        <a href="#">{{ $post->category->name }}</a>
+                                        <a href="{{ route('home.single_category', ['id' => $post->category->id]) }}">{{ $post->category->name }}</a>
                                     </span>
 
                                 </div>
@@ -64,68 +64,68 @@
                                     <div class="widget w-tags">
                                         <div class="tags-wrap">
                                             @foreach($post->tags as $tag)
-                                                <a href="#" class="w-tags-item">{{ $tag->name }}</a>
+                                                <a href="{{route('home.single_tag', ['id' => $tag->id])}}" class="w-tags-item">{{ $tag->name }}</a>
                                             @endforeach
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="socials">Share:
-                                <a href="#" class="social__item">
-                                    <i class="seoicon-social-facebook"></i>
-                                </a>
-                                <a href="#" class="social__item">
-                                    <i class="seoicon-social-twitter"></i>
-                                </a>
-                                <a href="#" class="social__item">
-                                    <i class="seoicon-social-linkedin"></i>
-                                </a>
-                                <a href="#" class="social__item">
-                                    <i class="seoicon-social-google-plus"></i>
-                                </a>
-                                <a href="#" class="social__item">
-                                    <i class="seoicon-social-pinterest"></i>
-                                </a>
-                            </div>
+                            {{--<div class="socials">Share:--}}
+                                {{--<a href="#" class="social__item">--}}
+                                    {{--<i class="seoicon-social-facebook"></i>--}}
+                                {{--</a>--}}
+                                {{--<a href="#" class="social__item">--}}
+                                    {{--<i class="seoicon-social-twitter"></i>--}}
+                                {{--</a>--}}
+                                {{--<a href="#" class="social__item">--}}
+                                    {{--<i class="seoicon-social-linkedin"></i>--}}
+                                {{--</a>--}}
+                                {{--<a href="#" class="social__item">--}}
+                                    {{--<i class="seoicon-social-google-plus"></i>--}}
+                                {{--</a>--}}
+                                {{--<a href="#" class="social__item">--}}
+                                    {{--<i class="seoicon-social-pinterest"></i>--}}
+                                {{--</a>--}}
+                            {{--</div>--}}
 
                         </article>
 
-                        <div class="blog-details-author">
+                        {{--<div class="blog-details-author">--}}
 
-                            <div class="blog-details-author-thumb">
-                                <img src="{{ asset('app/img/blog-details-author.png') }}" alt="Author">
-                            </div>
+                            {{--<div class="blog-details-author-thumb">--}}
+                                {{--<img src="{{ asset('app/img/blog-details-author.png') }}" alt="Author">--}}
+                            {{--</div>--}}
 
-                            <div class="blog-details-author-content">
-                                <div class="author-info">
-                                    <h5 class="author-name">Philip Demarco</h5>
-                                    <p class="author-info">SEO Specialist</p>
-                                </div>
-                                <p class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                                    nonummy nibh euismod.
-                                </p>
-                                <div class="socials">
+                            {{--<div class="blog-details-author-content">--}}
+                                {{--<div class="author-info">--}}
+                                    {{--<h5 class="author-name">Philip Demarco</h5>--}}
+                                    {{--<p class="author-info">SEO Specialist</p>--}}
+                                {{--</div>--}}
+                                {{--<p class="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam--}}
+                                    {{--nonummy nibh euismod.--}}
+                                {{--</p>--}}
+                                {{--<div class="socials">--}}
 
-                                    <a href="#" class="social__item">
-                                        <img src="{{ asset('app/svg/circle-facebook.svg') }}" alt="facebook">
-                                    </a>
+                                    {{--<a href="#" class="social__item">--}}
+                                        {{--<img src="{{ asset('app/svg/circle-facebook.svg') }}" alt="facebook">--}}
+                                    {{--</a>--}}
 
-                                    <a href="#" class="social__item">
-                                        <img src="{{ asset('app/svg/twitter.svg') }}" alt="twitter">
-                                    </a>
+                                    {{--<a href="#" class="social__item">--}}
+                                        {{--<img src="{{ asset('app/svg/twitter.svg') }}" alt="twitter">--}}
+                                    {{--</a>--}}
 
-                                    <a href="#" class="social__item">
-                                        <img src="{{ asset('app/svg/google.svg') }}" alt="google">
-                                    </a>
+                                    {{--<a href="#" class="social__item">--}}
+                                        {{--<img src="{{ asset('app/svg/google.svg') }}" alt="google">--}}
+                                    {{--</a>--}}
 
-                                    <a href="#" class="social__item">
-                                        <img src="{{ asset('app/svg/youtube.svg') }}" alt="youtube">
-                                    </a>
+                                    {{--<a href="#" class="social__item">--}}
+                                        {{--<img src="{{ asset('app/svg/youtube.svg') }}" alt="youtube">--}}
+                                    {{--</a>--}}
 
-                                </div>
-                            </div>
-                        </div>
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
 
                         <div class="pagination-arrow">
 
@@ -156,16 +156,16 @@
 
                         </div>
 
-                        <div class="comments">
+                        {{--<div class="comments">--}}
 
-                            <div class="heading text-center">
-                                <h4 class="h1 heading-title">Comments</h4>
-                                <div class="heading-line">
-                                    <span class="short-line"></span>
-                                    <span class="long-line"></span>
-                                </div>
-                            </div>
-                        </div>
+                            {{--<div class="heading text-center">--}}
+                                {{--<h4 class="h1 heading-title">Comments</h4>--}}
+                                {{--<div class="heading-line">--}}
+                                    {{--<span class="short-line"></span>--}}
+                                    {{--<span class="long-line"></span>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
 
                         <div class="row">
 
@@ -191,7 +191,7 @@
 
                                 <div class="tags-wrap">
                                     @foreach($all_tags as $tag)
-                                        <a href="#" class="w-tags-item">{{$tag->name}}</a>
+                                        <a href="{{ route('home.single_tag', ['id' => $tag->id])  }}" class="w-tags-item">{{$tag->name}}</a>
                                     @endforeach
                                 </div>
                             </div>

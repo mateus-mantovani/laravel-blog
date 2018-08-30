@@ -50,4 +50,22 @@ class HomeController extends Controller
 	                         ->with('prev', Post::find($prev))
 	                         ->with('next', Post::find($next));;
     }
+
+
+    public function singleCategory($id)
+    {
+    	return view('single-category')->with('category', Category::find($id))
+	                                  ->with('settings', Setting::first())
+	                                  ->with('categories', Category::take(4)->get())
+		                              ->with('all_tags', Tag::all());
+    }
+
+
+	public function singleTag($id)
+	{
+		return view('single-tag')->with('tag', Tag::find($id))
+		                              ->with('settings', Setting::first())
+		                              ->with('categories', Category::take(4)->get())
+		                              ->with('all_tags', Tag::all());
+	}
 }
