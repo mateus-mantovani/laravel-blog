@@ -16,6 +16,11 @@ Route::get('/', [
 	'as'    => 'home.index'
 ]);
 
+Route::get('/post/{slug}', [
+	'uses'  => 'HomeController@single',
+	'as'    => 'home.single'
+]);
+
 Auth::routes();
 
 
